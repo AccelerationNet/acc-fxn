@@ -30,20 +30,27 @@ module.exports = (() => {
 
     }
 
-    convertMethod(method, id) {
+    convertMethod(method) {
 
       let acceptMethods = {
-        'GET': ['index', 'show'],
-        'PUT': ['put', 'update'],
-        'POST': ['create', 'post'],
-        'DELETE': ['del', 'destroy'],
-        'OPTIONS': ['options', 'options']
+        'GET': 'get',
+        'PUT': 'put',
+        'POST': 'post',
+        'DELETE': 'delete',
+        'OPTIONS': 'options',
+        'PATCH': 'patch',
+        'COPY': 'copy',
+        'LINK': 'link',
+        'UNLINK': 'unlink',
+        'PURGE': 'purge',
+        'LOCK': 'lock',
+        'UNLOCK': 'unlock',
+        'PROPFIND': 'propfind',
+        'NOTIMPLEMENTED': 'notImplemented'
       };
 
-      let hasId = !!id;
-
-      method = method in acceptMethods ? method : 'GET';
-      method = acceptMethods[method][hasId | 0];
+      method = method in acceptMethods ? method : 'NOTIMPLEMENTED';
+      method = acceptMethods[method];
 
       return method;
 
@@ -59,7 +66,7 @@ module.exports = (() => {
           return this.error(err.message);
         }
 
-        this[this.convertMethod(this._method, this.params.id)]();
+        this[this.convertMethod(this._method)]();
 
       });
 
@@ -108,7 +115,7 @@ module.exports = (() => {
     /**
     * Method called when a route is hit with a DELETE request, if not first intercepted by custom Controller#destroy method. Intended to be overwritten when inherited.
     */
-    del() {
+    delete() {
       this.notImplemented();
     }
 
@@ -120,11 +127,61 @@ module.exports = (() => {
       this.render();
     }
 
-    index() { this.get(); }
-    show() { this.get(); }
-    update() { this.put(); }
-    create() { this.post(); }
-    destroy() { this.del(); }
+    /**
+    * Method called when a route is hit with a PATCH request, if not first intercepted by custom Controller#patch method. Intended to be overwritten when inherited.
+    */
+    patch() {
+      this.notImplemented();
+    }
+
+    /**
+    * Method called when a route is hit with a COPY request, if not first intercepted by custom Controller#copy method. Intended to be overwritten when inherited.
+    */
+    copy() {
+      this.notImplemented();
+    }
+
+    /**
+    * Method called when a route is hit with a LINK request, if not first intercepted by custom Controller#link method. Intended to be overwritten when inherited.
+    */
+    link() {
+      this.notImplemented();
+    }
+
+    /**
+    * Method called when a route is hit with a UNLINK request, if not first intercepted by custom Controller#unlink method. Intended to be overwritten when inherited.
+    */
+    unlink() {
+      this.notImplemented();
+    }
+
+    /**
+    * Method called when a route is hit with a PURGE request, if not first intercepted by custom Controller#purge method. Intended to be overwritten when inherited.
+    */
+    purge() {
+      this.notImplemented();
+    }
+
+    /**
+    * Method called when a route is hit with a LOCK request, if not first intercepted by custom Controller#lock method. Intended to be overwritten when inherited.
+    */
+    lock() {
+      this.notImplemented();
+    }
+
+    /**
+    * Method called when a route is hit with a UNLOCK request, if not first intercepted by custom Controller#unlock method. Intended to be overwritten when inherited.
+    */
+    unlock() {
+      this.notImplemented();
+    }
+
+    /**
+    * Method called when a route is hit with a PROPFIND request, if not first intercepted by custom Controller#propfind method. Intended to be overwritten when inherited.
+    */
+    propfind() {
+      this.notImplemented();
+    }
 
     /**
     * Set HTTP headers to be used by the outgoing http.ServerResponse
