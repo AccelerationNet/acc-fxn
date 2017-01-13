@@ -2,21 +2,21 @@
   "_args": [
     [
       {
-        "raw": "acc-fxn@~0.0.4",
+        "raw": "fxn@~0.1.4",
         "scope": null,
-        "escapedName": "acc-fxn",
-        "name": "acc-fxn",
-        "rawSpec": "~0.0.4",
-        "spec": ">=0.0.2 <0.1.0",
+        "escapedName": "fxn",
+        "name": "fxn",
+        "rawSpec": "~0.1.4",
+        "spec": ">=0.0.2 <0.9.0",
         "type": "range"
       },
       "/home/ACCELERATION/jim/git_tree/nodal"
     ]
   ],
-  "_from": "fxn@>=0.0.2 <0.1.0",
+  "_from": "fxn@>=0.0.2 <0.9.0",
   "_id": "fxn@0.1.4",
   "_inCache": true,
-  "_location": "/acc-fxn",
+  "_location": "/fxn",
   "_nodeVersion": "6.0.0",
   "_npmUser": {
     "name": "keithwhor",
@@ -32,14 +32,14 @@
     "escapedName": "fxn",
     "name": "fxn",
     "rawSpec": "~0.0.2",
-    "spec": ">=0.0.2 <0.1.0",
+    "spec": ">=0.0.2 <0.9.0",
     "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
   "_shrinkwrap": null,
-  "_spec": "acc-fxn@~0.0.4",
+  "_spec": "fxn@~0.1.4",
   "_where": "/home/ACCELERATION/jim/git_tree/nodal",
   "author": {
     "name": "Keith Horwood"
@@ -49,7 +49,7 @@
     "dotenv": "^2.0.0",
     "mime-types": "~2.1.9"
   },
-  "description": "Stateless Architecture",
+  "description": "Stateless Architecture - customized",
   "devDependencies": {
     "chai": "~3.5.0",
     "mocha": "~2.4.5"
@@ -67,14 +67,14 @@
       "email": "info@acceleration.net"
     }
   ],
-  "name": "acc-fxn",
+  "name": "fxn",
   "optionalDependencies": {},
   "readme": "ERROR: No README data found!",
   "scripts": {
     "docs": "documentation build core/docs.js -o DOCS.md -f md",
     "test": "mocha ./test/runner.js"
   },
-  "version": "0.0.4",
+  "version": "0.1.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/AccelerationNet/acc-fxn.git"
